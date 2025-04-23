@@ -1,0 +1,47 @@
+﻿@page "/"
+
+<PageTitle>Dashboard</PageTitle>
+
+<h2 class="mb-4">Dashboard de Facturación</h2>
+
+<div class="row g-3 mb-5">
+  <div class="col-6 col-md-3">
+    <div class="card text-center p-3 h-100">
+      <div class="card-title">Total facturas</div>
+      <div class="display-4">4</div>
+    </div>
+  </div>
+  <div class="col-6 col-md-3">
+    <div class="card text-center p-3 h-100">
+      <div class="card-title">Importe acumulado</div>
+      <div class="display-4">$45 000.00</div>
+    </div>
+  </div>
+  <div class="col-6 col-md-3">
+    <div class="card text-center p-3 h-100">
+      <div class="card-title">Clientes activos</div>
+      <div class="display-4">22</div>
+    </div>
+  </div>
+  <div class="col-6 col-md-3">
+    <div class="card text-center p-3 h-100">
+      <div class="card-title">Facturas pendientes</div>
+      <div class="display-4">1</div>
+    </div>
+  </div>
+</div>
+
+
+
+<h4 class="mt-5">Listado de facturas</h4>
+<table class="table table-striped mt-3">
+  <thead class="table-dark">
+    <tr><th>#</th><th>Cliente</th><th>Fecha</th><th>Importe</th><th>Estado</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td>Ferreteria Paraiso</td><td>2025-04-20</td><td>$12 000.00</td><td><span class="badge bg-success">Pagada</span></td></tr>
+    <tr><td>2</td><td>Plasticos Valle Azul</td><td>2025-04-18</td><td>$8 500.00</td><td><span class="badge bg-warning text-dark">Pendiente</span></td></tr>
+    <tr><td>3</td><td>Refacciones Hernández</td><td>2025-04-15</td><td>$5 000.00</td><td><span class="badge bg-success">Pagada</span></td></tr>
+    <tr><td>4</td><td>Materiales Construcción Abarca</td><td>2025-04-10</td><td>$19 500.00</td><td><span class="badge bg-danger">Vencida</span></td></tr>
+  </tbody>
+</table>
