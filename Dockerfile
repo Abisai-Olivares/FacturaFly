@@ -1,23 +1,23 @@
-# -------- STAGE 1: Build --------
+# --- STAGE 1: Build con .NET 9 SDK ---
     FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
     WORKDIR /app
     
-    # Copiamos el csproj y restauramos dependencias
-    COPY FacturaFly.csproj ./
+    # Copia el archivo .csproj con su nombre correcto
+    COPY FacturaFly.Client.csproj ./
     RUN dotnet restore
     
-    # Copiamos el resto y publicamos la app
+    # Copia el resto del proyecto
     COPY . ./
     RUN dotnet publish -c Release -o /out
     
-    # -------- STAGE 2: Runtime con NGINX --------
+    # --- STAGE 2: Runtime con NGINX ---
     FROM nginx:alpine AS runtime
     ENV PORT 80
     EXPOSE 80
     
-    # Copiamos archivos estáticos generados por Blazor a nginx
+    # Copia los archivos publicados estáticos
     COPY --from=build /out/wwwroot /usr/share/nginx/html
     
-    # Iniciamos NGINX
     CMD ["nginx", "-g", "daemon off;"]
+    
     
